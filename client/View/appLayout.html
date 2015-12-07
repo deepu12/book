@@ -1,0 +1,31 @@
+<template name="appLayout">
+  <header>
+    {{> navbar}}
+  </header>
+  <div class="row" style="margin-left : 15px; margin-right : 5px">
+     <div class="col s3" style="width : 130px; padding-left : 20px">
+       <div class="panel panel-primary">
+         <div class="panel-heading">
+           <h3 class="panel-title">Category</h3>
+         </div>
+         <div class="panel-body">
+           {{> catList}}
+         </div>
+       </div>
+     </div>
+     <div class="col s8">
+        <main style="min-height : 510px;">
+          {{>Template.dynamic template=content data=params}}
+        </main>
+     </div>
+   </div>
+   <footer class="page-footer" style="colour : #e02d2d;">
+         <div class="footer-copyright">
+           <div class="container">
+              <center>
+                 © 2015 Copyright DRP
+              </center>
+           </div>
+         </div>
+       </footer>
+</template>

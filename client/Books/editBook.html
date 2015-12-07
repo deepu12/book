@@ -1,0 +1,16 @@
+<template name="editBook">
+  {{#autoForm collection="Books" id="updateBook" type="update" doc=eBook}}
+  <fieldset>
+    <legend>Edit Book</legend>
+    {{> afQuickField name='name'}}
+    {{> afQuickField name='description'}}
+    {{> afQuickField name='category'}}
+    {{> afQuickField name='author'}}
+    <!-- {{> afQuickField name='userName' readonly=true}} -->
+    {{> afQuickField name='createdAt' readonly=true}}
+  </fieldset>
+    <button type="submit" class="btn btn-primary">Save</button>
+    &nbsp; &nbsp; &nbsp;
+    <button class="btn btn-danger" id="btn-del" value={{_id}}>DELETE</button>
+    {{/autoForm}}
+</template>

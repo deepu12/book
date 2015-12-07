@@ -1,0 +1,7 @@
+<template name="catList">
+  {{#each catlist}}
+			{{#if this}}
+				<a href="/category/{{this}}" class="collection-item">{{this}}</a>
+			{{/if}}
+		{{/each}}
+</template>

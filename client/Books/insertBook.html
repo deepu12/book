@@ -1,0 +1,29 @@
+<template name="insertBook">
+  {{#autoForm collection="Books" id="insertBooks" type="insert" resetOnSuccess=true}}
+  <fieldset>
+    <legend>Add Book</legend>
+    {{> afQuickField name='name'}}
+    {{> afQuickField name='description'}}
+    {{> afQuickField name='author'}}
+    {{> afQuickField name='category'}}
+    {{> afQuickField name='createdAt' type="hidden"}}
+    <div class="file-field input-field">
+      <div class="btn">
+        <i class="material-icons" style="font-size : 36px;">local_see</i>
+        <input type="file" id="file-upload" class="file-upload">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    {{#if imgSrc}}
+    <div class="img1">
+      <img src="{{imgSrc}}" style=" width : 200px; height : 130px ; border : 0"/>
+      {{> afQuickField name='imageId' type="hidden" value=imageId }}
+    </div>
+    {{/if}}
+  </fieldset>
+  &nbsp;
+  <button type="submit" class="btn btn-primary">Add</button>
+{{/autoForm}}
+</template>
