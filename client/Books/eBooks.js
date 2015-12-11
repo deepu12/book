@@ -1,4 +1,4 @@
-Template.home.helpers({
+Template.eBooks.helpers({
   books : function(){
     var book = Books.find();
     return book;
@@ -7,16 +7,9 @@ Template.home.helpers({
     var imgId = Images.findOne({_id:this.imageId});
     console.log("From Image Id helper",imgId);
     return imgId;
-  },
-  isAdmin : function(){
-    var uname = Meteor.user().username;
-    if (uname == "admin"){
-      return "Not a authorised user";
-    }
   }
 });
-
-Template.home.onCreated(function(){
+Template.eBooks.onCreated(function(){
   Meteor.subscribe("books");
   Meteor.subscribe("images");
 })

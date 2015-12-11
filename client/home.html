@@ -1,4 +1,5 @@
 <template name="home">
+  {{#if isAdmin}}
   {{#each books}}
    <div class="row">
    	<div class="divider"></div>
@@ -10,7 +11,7 @@
    			 <img src="{{this.url}}" width="135" height="100">
    	 	 	{{/with}}
    	 		{{else}}
-   		 	 <img src="/images/sample-2.jpg" width="135" height="100">
+        <img src="/images/sample-2.jpg" width="135" height="100">
    	 	 	{{/if}}
     			</div>
    			</a></div>
@@ -22,8 +23,9 @@
           <p><h6><b>Author :</b>{{author}}</h6></p>
    				<p><h6><b>Description :</b>{{description}}</h6></p>
    			</div></p>
-   			<div class="new" style="float : right">
-   			</div>
      	  </div>
    	{{/each}}
+    {{else}}
+    <h3>Not a authorised user</h3>
+    {{/if}}
 </template>

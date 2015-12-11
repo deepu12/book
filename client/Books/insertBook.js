@@ -19,4 +19,9 @@ Template.insertBook.helpers({
   imageId : function(){
     return Session.get('srv_img');
   }
-})
+});
+
+Template.insertBook.onCreated(function(){
+  Meteor.subscribe("books");
+  Meteor.subscribe("images");
+});
